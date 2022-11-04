@@ -25,7 +25,7 @@ object ApiClient {
             val originalHttpUrl = original.url
 
             val url = originalHttpUrl.newBuilder()
-                .addQueryParameter("api_key", "48d02d2803f669be5643367e3307dd43")
+                .addQueryParameter("api_key", "7676af1942427495bffe34fedbc20960")
                 .build()
 
             val requestBuilder: Request.Builder = original.newBuilder()

@@ -1,4 +1,4 @@
-package com.mobiapps.courses.tmdb.pages.list
+package com.mobiapps.courses.tmdb.pages.search
 
 import android.annotation.SuppressLint
 import android.util.Log
@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CompoundButton
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.ToggleButton
@@ -15,11 +14,11 @@ import coil.load
 import com.mobiapps.courses.tmdb.R
 import com.mobiapps.courses.tmdb.entities.Movie
 
-class MoviesListAdapter(
+class MoviesSearchAdapter(
     private val onClick: (Movie) -> Unit,
     private val onFavoriteToggle: (Movie, Boolean) -> Unit
 ) :
-    RecyclerView.Adapter<MoviesListAdapter.ViewHolder>() {
+    RecyclerView.Adapter<MoviesSearchAdapter.ViewHolder>() {
 
     var dataSet: List<Movie> = emptyList()
         @SuppressLint("NotifyDataSetChanged")
@@ -61,7 +60,7 @@ class MoviesListAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.movies_list_item, parent, false)
+            .inflate(R.layout.movie_search_item, parent, false)
 
         return ViewHolder(view)
     }

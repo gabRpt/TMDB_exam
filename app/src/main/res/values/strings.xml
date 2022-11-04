@@ -2,4 +2,7 @@
     <string name="app_name">TMDB</string>
     <string name="votes">%1$s (%2$s)</string>
     <string name="movie_search_hint">Name a movie to search</string>
+    <string name="genre_text">Genre  :</string>
+    <string name="genre_action">action</string>
+    <string name="genres">genres</string>
 </resources>
