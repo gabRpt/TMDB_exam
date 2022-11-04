@@ -10,8 +10,6 @@ import com.mobiapps.courses.tmdb.R
 import com.mobiapps.courses.tmdb.datasources.remote.dtos.GenreDto
 
 
-// class to init all the genre in the spinner
-// retrieve the genre from TmdbServie
 class MovieSearchGenreSpinnerAdapter(
     context: Context,
     private val genres: List<GenreDto>
@@ -34,5 +32,5 @@ class MovieSearchGenreSpinnerAdapter(
         view.findViewById<TextView>(R.id.name).text = genre.name
 
         return view
-    }
+    } 
 }

@@ -90,15 +90,19 @@ class TmdbService(context: Context, private val mock: Boolean = false) {
             success(mockDataSource.movies)
         else {
             CoroutineScope(Dispatchers.IO).launch {
-                networkDataSource.getMoviesByGenre(genre, success = { movies ->
-                    val moviesDb = movieDao.getAll()
-                    movies.map { movie ->
-                        movie.favorite = moviesDb.any { it.id == movie.id }
-                    }
-                    success(movies)
-                }, failure = {
-                    failure()
-                })
+                if (genre == 0) {
+                    getLatestMovies(success, failure)
+                } else {
+                    networkDataSource.getMoviesByGenre(genre, success = { movies ->
+                        val moviesDb = movieDao.getAll()
+                        movies.map { movie ->
+                            movie.favorite = moviesDb.any { it.id == movie.id }
+                        }
+                        success(movies)
+                    }, failure = {
+                        failure()
+                    })
+                }
             }
         }
     }

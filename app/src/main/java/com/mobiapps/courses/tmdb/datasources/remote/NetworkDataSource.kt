@@ -88,7 +88,9 @@ class NetworkDataSource {
             if (response.isSuccessful && response.body() != null) {
                 val content = response.body()
                 content?.let {
-                    success(it.genres)
+                    val genres = mutableListOf(GenreDto(0, "All"))
+                    genres.addAll(it.genres)
+                    success(genres)
                 }
             } else
                 failure()

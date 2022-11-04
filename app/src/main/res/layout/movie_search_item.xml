@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/backdrop"
         android:layout_width="92dp"
-        android:layout_height="92dp"
+        android:layout_height="135dp"
         android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -37,6 +37,18 @@
         app:layout_constraintTop_toBottomOf="@+id/title"
         tools:text="Release Date" />
 
+    <TextView
+        android:id="@+id/movieSearchVote"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/backdrop"
+        app:layout_constraintTop_toBottomOf="@+id/releaseDate"
+        tools:text="Cast" />
+
     <ToggleButton
         android:id="@+id/favorite"
         android:layout_width="30dp"
@@ -49,4 +61,5 @@
         app:layout_constraintEnd_toEndOf="@+id/backdrop"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -118,6 +118,7 @@ class MovieSearchActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
+                // ça marche :)
             }
         }
     }

@@ -32,6 +32,7 @@ class MoviesSearchAdapter(
         val title: TextView
         val releaseDate: TextView
         val favorite: ToggleButton
+        val vote: TextView
 
         init {
             with(view) {
@@ -39,6 +40,7 @@ class MoviesSearchAdapter(
                 title = findViewById(R.id.title)
                 releaseDate = findViewById(R.id.releaseDate)
                 favorite = findViewById(R.id.favorite)
+                vote = findViewById(R.id.movieSearchVote)
                 setOnClickListener {
                     onClick(dataSet[adapterPosition])
                 }
@@ -70,6 +72,7 @@ class MoviesSearchAdapter(
         holder.title.text = dataSet[position].title
         holder.releaseDate.text = dataSet[position].releaseDate.toString()
         holder.favorite.isChecked = dataSet[position].favorite
+        holder.vote.text = dataSet[position].averageVote.toString() + "/10" + " (" + dataSet[position].votesNumber.toString() + ")"
     }
 
     override fun getItemCount(): Int =
